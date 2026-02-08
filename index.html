@@ -3,119 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TredCred FAQ</title>
+    <title>Tread Cred</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        header {
-            background: linear-gradient(45deg, #4a90e2, #9013fe);
-            color: white;
-            text-align: center;
-            padding: 2em 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
         }
-        .tab {
-            margin: 0 10px;
-            padding: 10px 20px;
-            background: #ffffff;
-            color: #4a90e2;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .tab:hover {
-            background: #e0e0e0;
-        }
-        .search {
-            margin: 20px;
-            text-align: center;
-        }
-        .faq {
-            margin: 20px;
+        .container {
             max-width: 800px;
-            border: 1px solid #e0e0e0;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
-            overflow: hidden;
         }
-        .faq-item {
-            border-top: 1px solid #e0e0e0;
-            padding: 10px;
-            cursor: pointer;
+        h1 {
+            text-align: center;
+            color: #333;
         }
-        .faq-item:first-child {
-            border-top: none;
+        h2 {
+            color: #0056b3;
         }
-        .content {
-            display: none;
-            padding: 10px 15px;
-            background: #f9f9f9;
+        p {
+            color: #555;
         }
-        @media (max-width: 600px) {
-            .tab {
-                margin: 5px;
-                padding: 8px 15px;
-            }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #999;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>TredCred FAQ</h1>
-        <p>Find answers to your questions about the TredCred app.</p>
-    </header>
-    <div class="search">
-        <input type="text" id="searchBox" placeholder="Search FAQs..." />
+    <div class="container">
+        <h1>Tread Cred</h1>
+        <p><em>Get credit for your indoor runs</em></p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>What is Tread Cred?</h3>
+        <p>Tread Cred is a utility that helps you get credit for your indoor runs. Simply take a photo of your treadmill's dashboard at the end of your workout, and our app extracts the data (time, distance, pace) to create a verified "Virtual Run" activity on your Strava profile.</p>
+        <h3>How do I use it?</h3>
+        <p>Open the app and connect your Strava account. Snap a clear picture of your treadmill console showing your final stats. We process the image and automatically push the activity to your Strava feed. You can view a history of your successfully uploaded runs directly in the app.</p>
+        <h3>Do you keep my photos?</h3>
+        <p>No. Your privacy is our priority. The photos you upload are processed instantly to extract the data and are immediately deleted. We never store, share, or analyze your photos for any purpose other than creating your specific workout.</p>
+        <h3>Is this app made by Strava?</h3>
+        <p>No. Tread Cred is a third-party application compatible with Strava. We use the official Strava API to sync your activities, but we are an independent team not affiliated with Strava, Inc.</p>
+        <h3>Why didn't my photo upload correctly?</h3>
+        <p>Ensure the photo is well-lit and the numbers on the treadmill console are clearly visible and not blurry. Glare on the screen can sometimes interfere with the reading. Retake the photo and try again!</p>
+        <footer>
+            <p>© 2024 Tread Cred. Compatible with Strava.</p>
+        </footer>
     </div>
-    <nav>
-        <div class="tab">Getting Started</div>
-        <div class="tab">Photo Upload</div>
-        <div class="tab">Strava Sync</div>
-        <div class="tab">Privacy</div>
-        <div class="tab">Troubleshooting</div>
-        <div class="tab">Features</div>
-    </nav>
-    <div class="faq">
-        <div class="faq-item" onclick="toggleContent(this)">
-            <h3>What is TredCred?</h3>
-            <div class="content"><p>TredCred is an app that connects your treadmill workouts to Strava!</p></div>
-        </div>
-        <div class="faq-item" onclick="toggleContent(this)">
-            <h3>How does photo upload work?</h3>
-            <div class="content"><p>You can upload photos from your workouts, and they will be shared with your Strava profile.</p></div>
-        </div>
-        <div class="faq-item" onclick="toggleContent(this)">
-            <h3>What is Strava Sync?</h3>
-            <div class="content"><p>Strava Sync allows you to automatically share your treadmill workouts on Strava right after completion.</p></div>
-        </div>
-        <div class="faq-item" onclick="toggleContent(this)">
-            <h3>Your privacy is protected!</h3>
-            <div class="content"><p>Your photos are never stored on our servers. TredCred guarantees that your data remains private.</p></div>
-        </div>
-        <div class="faq-item" onclick="toggleContent(this)">
-            <h3>What should I do if I have issues?</h3>
-            <div class="content"><p>If you encounter any problems, please check our troubleshooting guide or contact support.</p></div>
-        </div>
-        <div class="faq-item" onclick="toggleContent(this)">
-            <h3>What features does TredCred offer?</h3>
-            <div class="content"><p>TredCred offers various features including workout tracking, progress monitoring, and workout sharing.</p></div>
-        </div>
-        <!-- Add more FAQ items as needed -->
-    </div>
-    <script>
-        function toggleContent(item) {
-            const content = item.querySelector('.content');
-            content.style.display = content.style.display === "block" ? "none" : "block";
-        }
-    </script>
 </body>
 </html>
