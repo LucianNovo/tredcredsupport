@@ -7,34 +7,63 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
         header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
+            background: linear-gradient(45deg, #4a90e2, #9013fe);
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .tab {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: #ffffff;
+            color: #4a90e2;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab:hover {
+            background: #e0e0e0;
+        }
+        .search {
+            margin: 20px;
             text-align: center;
         }
-        section {
-            padding: 20px;
+        .faq {
             margin: 20px;
-            background: #ffffff;
+            max-width: 800px;
+            border: 1px solid #e0e0e0;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
-        h1, h2, h3 {
-            color: #35424a;
+        .faq-item {
+            border-top: 1px solid #e0e0e0;
+            padding: 10px;
+            cursor: pointer;
         }
-        p {
-            color: #555;
+        .faq-item:first-child {
+            border-top: none;
+        }
+        .content {
+            display: none;
+            padding: 10px 15px;
+            background: #f9f9f9;
         }
         @media (max-width: 600px) {
-            section {
-                margin: 10px;
-                padding: 15px;
+            .tab {
+                margin: 5px;
+                padding: 8px 15px;
             }
         }
     </style>
@@ -42,28 +71,51 @@
 <body>
     <header>
         <h1>TredCred FAQ</h1>
+        <p>Find answers to your questions about the TredCred app.</p>
     </header>
-    <section>
-        <h2>1. How to Sync Your Treadmill to Strava?</h2>
-        <p>To sync your treadmill workouts to Strava, connect your TredCred account to Strava under settings. Once connected, workouts will be automatically uploaded.</p>
-    </section>
-    <section>
-        <h2>2. Can I Upload Photos?</h2>
-        <p>Yes! You can upload photos of your workouts. Simply navigate to the upload section, and you can add photos to your workouts.</p>
-    </section>
-    <section>
-        <h2>3. Privacy Guarantee</h2>
-        <p>We guarantee that your photos are not stored on our servers. All uploads are processed locally and deleted after use.</p>
-    </section>
-    <section>
-        <h2>4. Troubleshooting Information</h2>
-        <p>If you are experiencing issues, please check the following:
-            <ul>
-                <li>Ensure your treadmill is connected to the internet.</li>
-                <li>Update the TredCred app to the latest version.</li>
-                <li>Restart your treadmill and try syncing again.</li>
-            </ul>
-        </p>
-    </section>
+    <div class="search">
+        <input type="text" id="searchBox" placeholder="Search FAQs..." />
+    </div>
+    <nav>
+        <div class="tab">Getting Started</div>
+        <div class="tab">Photo Upload</div>
+        <div class="tab">Strava Sync</div>
+        <div class="tab">Privacy</div>
+        <div class="tab">Troubleshooting</div>
+        <div class="tab">Features</div>
+    </nav>
+    <div class="faq">
+        <div class="faq-item" onclick="toggleContent(this)">
+            <h3>What is TredCred?</h3>
+            <div class="content"><p>TredCred is an app that connects your treadmill workouts to Strava!</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleContent(this)">
+            <h3>How does photo upload work?</h3>
+            <div class="content"><p>You can upload photos from your workouts, and they will be shared with your Strava profile.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleContent(this)">
+            <h3>What is Strava Sync?</h3>
+            <div class="content"><p>Strava Sync allows you to automatically share your treadmill workouts on Strava right after completion.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleContent(this)">
+            <h3>Your privacy is protected!</h3>
+            <div class="content"><p>Your photos are never stored on our servers. TredCred guarantees that your data remains private.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleContent(this)">
+            <h3>What should I do if I have issues?</h3>
+            <div class="content"><p>If you encounter any problems, please check our troubleshooting guide or contact support.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleContent(this)">
+            <h3>What features does TredCred offer?</h3>
+            <div class="content"><p>TredCred offers various features including workout tracking, progress monitoring, and workout sharing.</p></div>
+        </div>
+        <!-- Add more FAQ items as needed -->
+    </div>
+    <script>
+        function toggleContent(item) {
+            const content = item.querySelector('.content');
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
